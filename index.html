@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from bouncingtittyshark.fun/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Jun 2025 04:28:20 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sharkwifbigtits</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: red;
+      transition: background-color 1s linear; /* Smooth color transitions */
+    }
+
+    .startup-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .startup-screen h1 {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .startup-button {
+      width: 150px;
+      height: 150px;
+      background-image: url('img/button.png');
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      background-color: transparent; /* Ensures no background color */
+      outline: none; /* Removes focus outline */
+    }
+
+    .startup-footer {
+      margin-top: 20px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .startup-footer a {
+      color: #00aaff;
+      text-decoration: underline;
+    }
+
+    .text {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .counter {
+      position: absolute;
+      top: 40px;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .mom-container {
+      display: none;
+      position: absolute;
+      bottom: 50px;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    img.disabled {
+      pointer-events: none; /* Disable clicks */
+    }
+
+    #momImage {
+      max-width: 150px;
+    }
+
+    #top-links {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    #top-links a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Nieuwe CSS voor vallende Binance-logo's */
+    .falling-logo {
+      position: fixed;
+      top: -100px; /* Start buiten het scherm */
+      width: 50px;
+      pointer-events: none;
+      z-index: 5;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="startup-screen" id="startupScreen">
+    <h1>SEE THE SHARK TITS</h1>
+    <button class="startup-button" id="startupButton"></button>
+    <div class="startup-footer">
+    </div>
+  </div>
+
+  <audio id="startupSound" src="img/sound.mp3"></audio>
+  <audio id="backgroundMusic" src="img/song.mp3" loop></audio> <!-- Background music -->
+
+  <div class="counter" id="bounceCounter">Bounces: 0</div>
+  <div class="text">Click me for a bounce</div>
+  <img id="sharkImage" src="img/shark.png" alt="Static Shark">
+
+  <div id="top-links">
+    <a href="" target="_blank">pump.fun</a>
+    <a href="https://dexscreener.com/solana" target="_blank">dexscreener</a>
+    <a href="https://x.com/i/communities/1936281615803593156/" target="_blank">X</a>
+  </div>
+
+  <div class="mom-container" id="momContainer">
+    <div>Keep bouncing baby</div>
+    <img id="momImage" src="img/mom.png" alt="Mom">
+  </div>
+
+  <script>
+    const startupScreen = document.getElementById('startupScreen');
+    const startupButton = document.getElementById('startupButton');
+    const startupSound = document.getElementById('startupSound');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const sharkImage = document.getElementById('sharkImage');
+    const bounceCounter = document.getElementById('bounceCounter');
+    const momContainer = document.getElementById('momContainer');
+    let bounceCount = 0;
+
+    // Initially mute background music
+    backgroundMusic.muted = true;
+
+    // Set volumes to lower levels
+    startupSound.volume = 0.5; // 50% volume for startup sound
+    backgroundMusic.volume = 0.3; // 30% volume for background music
+
+    // Start Screen Logic
+    startupButton.addEventListener('click', () => {
+      startupSound.play(); // Play the sound for button click
+      setTimeout(() => {
+        // Hide the startup screen
+        startupScreen.style.display = 'none';
+
+        // Unmute and play background music
+        backgroundMusic.muted = false;
+        backgroundMusic.play().catch(() => {
+          // If autoplay is blocked, wait for user interaction
+          document.body.addEventListener('click', () => {
+            backgroundMusic.play();
+          }, { once: true });
+        });
+      }, 4300); // Transition after 4300ms
+    });
+
+    // Function to cycle through RGB colors
+    function cycleRGBBackground() {
+      const colors = ['red', 'green', 'blue']; // RGB colors
+      let currentIndex = 0;
+
+      setInterval(() => {
+        // Update the background color to the next in the sequence
+        document.body.style.backgroundColor = colors[currentIndex];
+
+        // Move to the next color, looping back to the start
+        currentIndex = (currentIndex + 1) % colors.length;
+      }, 1000); // Change every 1 second
+    }
+
+    // Start RGB background animation
+    cycleRGBBackground();
+
+    // Add click event to play the GIF
+    sharkImage.addEventListener('click', () => {
+      // Disable further clicks
+      sharkImage.classList.add('disabled');
+
+      // Increment bounce count and update counter
+      bounceCount++;
+      bounceCounter.textContent = `Bounces: ${bounceCount}`;
+
+      // Check if it's time to show mom.png
+      if (bounceCount % 5 === 0) {
+        momContainer.style.display = 'block';
+        setTimeout(() => {
+          momContainer.style.display = 'none';
+        }, 2000); // Hide after 2 seconds
+      }
+
+      // Change the source to the GIF
+      sharkImage.src = 'img/sharkgif.gif';
+
+      // After the duration of the GIF, switch back to the static image and re-enable clicks
+      const gifDuration = 1450; // Replace with your GIF's duration in milliseconds
+      setTimeout(() => {
+        sharkImage.src = 'img/shark.png'; // Reset to the static image
+        sharkImage.classList.remove('disabled'); // Re-enable clicks
+      }, gifDuration);
+    });
+
+    /* Nieuwe JavaScript-code voor vallende Binance-logo's */
+    function createFallingLogo() {
+      const logo = document.createElement('img');
+      logo.src = 'img/binance.png';
+      logo.classList.add('falling-logo');
+      // Stel een willekeurige horizontale positie in
+      logo.style.left = Math.random() * 100 + 'vw';
+      // Stel een willekeurige animatieduur in (tussen de 5 en 10 seconden)
+      const duration = 5 + Math.random() * 5;
+      logo.style.animationDuration = duration + 's';
+      // Stel een willekeurige vertraging in
+      logo.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(logo);
+      
+      // Verwijder het element na afloop van de animatie
+      logo.addEventListener('animationend', () => {
+        logo.remove();
+      });
+    }
+
+    // Maak om de 500ms een nieuw vallend logo aan
+    setInterval(createFallingLogo, 500);
+  </script>
+</body>
+
+<!-- Mirrored from bouncingtittyshark.fun/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 21 Jun 2025 04:28:22 GMT -->
+</html>
